@@ -14,6 +14,9 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 템플릿 디렉토리 path
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+print(TEMPLATES_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -58,7 +61,10 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 템플릿 검색할 경로 추가
+        'DIRS': [
+            TEMPLATES_DIR,
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
